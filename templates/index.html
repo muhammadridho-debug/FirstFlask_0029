@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parsing Parameter POST - Flask</title>
+    <!-- Menghubungkan file styles.css dari folder static -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Form Input Method POST</h2>
+
+        <form method="POST" action="/">
+            <!-- Label -->
+            <label for="input-nama">Masukkan Nama Anda:</label>
+
+            <!-- TextField -->
+            <input type="text" id="input-nama" name="nama_pengguna" placeholder="Ketik nama di sini..." required>
+
+            <!-- Button -->
+            <button type="submit">Kirim Data</button>
+        </form>
+
+        <!-- Menampilkan hasil parsing dari app.py jika tombol sudah diklik -->
+        {% if hasil %}
+            <div class="result-box">
+                <p>{{ hasil }}</p>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
